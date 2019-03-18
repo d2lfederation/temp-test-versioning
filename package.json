@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/d2lfederation/temp-test-versioning/issues"
   },
-  "homepage": "https://github.com/d2lfederation/temp-test-versioning#readme"
+  "homepage": "https://github.com/d2lfederation/temp-test-versioning#readme",
+  "devDependencies": {
+    "frau-ci": "github:Brightspace/frau-ci#mbayly/support-owner-name"
+  }
 }
