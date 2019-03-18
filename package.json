@@ -1,6 +1,6 @@
 {
   "name": "temp-test-versioning",
-  "version": "",
+  "version": "1.0.0",
   "description": "Temporary repo to test adding versioning to BrightspaceUI repos",
   "main": "index.js",
   "scripts": {
