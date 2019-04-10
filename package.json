@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/d2lfederation/temp-test-versioning#readme",
   "devDependencies": {
-    "frau-ci": "github:Brightspace/frau-ci#mbayly/support-tag-prefix"
+    "frau-ci": "^1.33.2"
   }
 }
