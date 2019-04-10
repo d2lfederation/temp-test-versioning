@@ -2,7 +2,7 @@ language: node_js
 node_js: node
 script:
 - |
-  if [ "$TRAVIS_BRANCH" == "master" ] && [ $TRAVIS_PULL_REQUEST == false ]; then
+  if [ $TRAVIS_BRANCH == "master" ] && [ $TRAVIS_PULL_REQUEST == false ] && [ $TRAVIS_EVENT_TYPE !== "cron" ]; then
     echo "Not a Pull Request and on branch master so bumping version";
     frauci-update-version;
     export TRAVIS_TAG=$(frauci-get-version)
@@ -14,7 +14,6 @@ deploy:
     tags: true
 env:
   global:
-  - TAG_PREFIX=x
   - OWNER_NAME=BrightspaceUI
   - REPO_NAME=temp-test-versioning
   - secure: OFnHrA9jYP3LoRvtVuQ32wVCR+Uu6nsu8piRUemPzI5F8CCgSyGytn1wUBC87IqmGxNeLJjflj+V3eVwUmbaw1iFpY19QRbUj0G4qcIPlVI9VAAHZIqHLavCd5QYqqnEZVuSIW+awQDX3NpfycH24cxmIjjDHMcL009zIK3q7e0iYrzMpN1Lsgp29Gtp0p1e9npJ8FyORvlmPFf5+1uH0YmKHp1MNQdnq51pSY7I1IZ1ku35Bz6p3jTN7c0E5nPtRNEjfQzteQna//hiRHEBDmhed/fTTrG3LT1o0TduxoUES5tk7uM4jfrxDHskwpu+de7febWm9cupjkFc00OchuCuVuAd0765Xmb5lDlTEczCE9rwPDpCEyG+CtIQGTWb9kLqn/vtCCN5mt+xsAIo2Y84VDZMj0oSvSm9n3KPDvInpsVp6Qvbg1qxJ5ZEzeK/KGHKTg/8V9szcHRLBpr32Gn1OlwKXqqVOkk6pWme0ydB7A4SPlwFKhLT69HO+Dztl065Ef71bJqoF7TT8+k0N9S34wPrC/W7bRLSo0o4lQhCFX+XhTtTMOWdnxr5pWVbB5GFYlDbaM+zhzajKxHYa2O2Vi/0pSEDgXwhUPGNOI+CfgFbh1x4XZt/O08YbykLVU2sKqqzBDfAbwC4ex4WupkM5Dy/TmhDZUXjASod25w=
